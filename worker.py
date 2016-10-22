@@ -1,14 +1,12 @@
-import os
-import redis
-from rq import Worker, Queue, Connection
+import logging
 
-listen = ['high', 'default', 'low']
+print('processing message')
+logging.info('fwew')
 
-redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
+from handlers import *
 
-conn = redis.from_url(redis_url)
-
-if __name__ == '__main__':
-    with Connection(conn):
-        worker = Worker(map(Queue, listen))
-        worker.work()
+while True:
+    print('processing message')
+    logging.info('fwew')
+    message = service.get_next_message_to_process()
+    service.process_handler(**message)
