@@ -5,6 +5,7 @@ service = Microservice()
 
 @service.register_handler('send_sms_message')
 def send_sms_message(potato, **kwargs):
+    exit()
     print('1'*10)
 
 @service.register_handler('send_sms_message2')
