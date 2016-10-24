@@ -13,7 +13,7 @@ class Microservice(object):
         return decorator
 
     def process_handler(self, handler_name, data):
-        if handler_name in self.handler_name:
+        if handler_name in self.handlers:
             self.handlers[handler_name](**data)
         else:
             logging.error(
