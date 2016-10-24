@@ -17,17 +17,17 @@ class Microservice(object):
             self.handlers[handler_name](**data)
         else:
             logging.error(
-                "Cannot find handler for '{}'".format(handler_name)
+                'Cannot find handler for {}'.format(handler_name)
             )
 
     def announce(queue, message):
-        logging.info("Announcing message '{}' to queue '{}'".format(
+        logging.info('Announcing message {} to queue {}'.format(
             queue, message
         ))
-        self.r.rpush(settings.redis_queue, 'bar')
+        self.r.rpush(settings.redis_queue, message)
 
     def get_next_message_to_process(self):
         message = self.r.blpop(settings.redis_queue)[1]
-        logging.info("Processing message '{}'".format(message))
+        logging.info('Processing message {}'.format(message))
         message = json.loads(message)
         return message
