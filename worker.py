@@ -1,13 +1,7 @@
-import logging
-
-print('Processing messages')
-logging.warn('Testing warning')
-logging.error('Testing error')
-
 from handlers import *
 
+print('Processing messages')
 while True:
-    print('processing message')
-    logging.info('fwew')
     message = service.get_next_message_to_process()
+    print("Processing message '{}'".format(message))
     service.process_handler(**message)

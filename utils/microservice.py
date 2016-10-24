@@ -13,7 +13,12 @@ class Microservice(object):
         return decorator
 
     def process_handler(self, handler_name, data):
-        self.handlers[handler_name](**data)
+        if handler_name in self.handler_name:
+            self.handlers[handler_name](**data)
+        else:
+            logging.error(
+                "Cannot find handler for '{}'".format(handler_name)
+            )
 
     def announce(queue, message):
         logging.info("Announcing message '{}' to queue '{}'".format(
