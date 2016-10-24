@@ -1,7 +1,8 @@
 import logging
 
-print('processing message')
-logging.info('fwew')
+print('Processing messages')
+logging.warn('Testing warning')
+logging.error('Testing error')
 
 from handlers import *
 
