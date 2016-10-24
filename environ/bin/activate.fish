@@ -32,7 +32,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/manoj/Dropbox/projects/Background-Tasks-in-Python-with-RQ/env"
+set -gx VIRTUAL_ENV "/Users/manoj/Dropbox/projects/Background-Tasks-in-Python-with-RQ/environ"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

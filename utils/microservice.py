@@ -28,6 +28,5 @@ class Microservice(object):
 
     def get_next_message_to_process(self):
         message = self.r.blpop(settings.redis_queue)[1]
-        logging.info('Processing message {}'.format(message))
         message = json.loads(message)
         return message

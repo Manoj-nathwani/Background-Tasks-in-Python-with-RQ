@@ -39,7 +39,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/manoj/Dropbox/projects/Background-Tasks-in-Python-with-RQ/env"
+VIRTUAL_ENV="/Users/manoj/Dropbox/projects/Background-Tasks-in-Python-with-RQ/environ"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -1,5 +1,8 @@
 from handlers import *
 
+result = m.send_email(data)
+print(result)
+
 print('Processing messages')
 while True:
     message = service.get_next_message_to_process()
